@@ -1,16 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-import './styles.css';
+import logo from "./logo.svg";
+import "./App.css";
+import "./styles.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import MoviesGrid from "./components/MoviesGrid";
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="header">
-        <h1>Wlecomr to Moviedux</h1>
-      </header>
-      <footer className="footer">
-        <p class='footer'>FOoter</p>
-      </footer>
+      <div className="container">
+        
+       <Header/>
+       <MoviesGrid/>
+       
+      </div>
+
+      <Footer></Footer>
     </div>
   );
 }
