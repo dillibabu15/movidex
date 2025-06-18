@@ -1,70 +1,121 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 🎬 MovieDex – Movie Recommendation App
 
-## Available Scripts
+A responsive movie recommendation web application built with **React.js**. Users can browse movies, search by title, filter by genre and rating, and manage a personalized watchlist with a smooth, modern UI.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🚀 Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 🔍 **Search Movies** – Instantly search through the movie list by title.
+- 🎭 **Genre Filter** – Filter movies by categories like Action, Drama, Fantasy, Horror.
+- ⭐ **Rating Filter** – Filter by movie rating quality: Good (8+), Ok (5–8), Bad (<5).
+- ✅ **Watchlist Toggle** – Add/remove movies to/from a watchlist using a toggle switch.
+- 🎨 **Dynamic Styling** – Ratings visually styled with color coding (Green, Yellow, Red).
+- ♻️ **Reusable Components** – Modular components built with `useState`, `useEffect`, and props.
+- 🧭 **Routing Support** – Navigation handled using `React Router` (Home & Watchlist views).
+- 📱 **Responsive Design** – Optimized for all screen sizes with modern CSS.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🛠 Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **React.js**
+- **JavaScript (ES6)**
+- **React Router DOM**
+- **HTML5 + CSS3**
+- **Custom JSON data (movies.json)**
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📁 Folder Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+/moviedex
+│
+├── public/
+│   └── images/
+│       └── \[movie images + default.jpg]
+│
+├── src/
+│   ├── components/
+│   │   ├── MovieCard.js
+│   │   ├── MoviesGrid.js
+│   │   ├── Watchlist.js
+│   │   ├── Header.js
+│   │   └── Footer.js
+│   ├── App.js
+│   ├── styles.css
+│   └── movies.json
+│
+├── package.json
+└── README.md
 
-### `npm run eject`
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📦 Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 1. Clone the Repository
+```bash
+git clone https://github.com/your-username/moviedex.git
+cd moviedex
+````
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 2. Install Dependencies
 
-## Learn More
+```bash
+npm install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 3. Start Development Server
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm start
+```
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🖼 Sample Screenshot
 
-### Analyzing the Bundle Size
+![image](https://github.com/user-attachments/assets/847e7ffb-8910-49ca-9ddd-a5c37c7bef87)
+![image](https://github.com/user-attachments/assets/b53ad303-d265-4e44-8bd2-2d3be21d75fc)
+![image](https://github.com/user-attachments/assets/575bd185-2b18-4dcb-8071-a38e6ff3ca7c)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🌐 Deployment
 
-### `npm run build` fails to minify
+You can deploy this project using:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* GitHub Pages
+* Netlify
+* Vercel
+
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🙌 Acknowledgments
+
+* UI inspiration from various movie apps
+* React documentation for hooks and routing
+
+
+
+🎥 Made with ❤️ using React
+
+
+
+
