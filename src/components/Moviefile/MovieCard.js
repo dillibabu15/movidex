@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles.css";
+import "../../styles.css";
 
 export default function MovieCard({ movie, isWatchlisted, toggleWatchlist }) {
   const handleError = (e) => {
