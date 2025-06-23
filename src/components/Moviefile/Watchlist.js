@@ -5,6 +5,10 @@ import MovieCard from "./MovieCard";
 export default function Watchlist({ movies, watchlist, toggleWatchlist }) {
   return (
     <div>
+      <div className="watchlist-header">
+        <button className="back-button" onClick={() => window.history.back()}>
+          Back
+        </button>
       <h1 className="title">Your Watchlist</h1>
       <div className="watchlist">
         {watchlist.map((id) => {
@@ -19,6 +23,7 @@ export default function Watchlist({ movies, watchlist, toggleWatchlist }) {
           );
         })}
       </div>
+    </div>
     </div>
   );
 }

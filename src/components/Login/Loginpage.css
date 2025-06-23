@@ -5,13 +5,13 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #302f2f;
+    background-color: #131111;
     font-family: Arial, sans-serif;
 }
 
 .login-box,
 .welcome-box {
-    background-color: white;
+    background-color: rgb(248, 29, 29);
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -21,8 +21,9 @@
 
 .page-title {
     margin-bottom: 30px;
-    color: #333;
+    color: #fff9f9;
     font-size: 24px;
+    
 }
 
 .welcome-title {
@@ -38,9 +39,10 @@
 
 .input-label {
     display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #333;
+    margin-bottom: 9px;
+    font-size: larger;
+    font-weight:bolder;
+    color: #ffffff;
 }
 
 .text-input {
@@ -74,21 +76,21 @@
 }
 
 .btn-submit {
-    background-color: #007bff;
+    background-color: #000000;
     color: white;
 }
 
 .btn-submit:hover {
-    background-color: #0056b3;
+    background-color: #0037ff;
 }
 
 .btn-reset {
-    background-color: #6c757d;
+    background-color: #000000;
     color: white;
 }
 
 .btn-reset:hover {
-    background-color: #545b62;
+    background-color: #0037ff;
 }
 
 .btn-logout {
@@ -128,4 +130,8 @@
     margin-bottom: 20px;
     color: #666;
     font-size: 16px;
+}
+.text-login {
+    color: #007bff;
+    text-decoration: none;
 }

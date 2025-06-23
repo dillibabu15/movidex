@@ -249,3 +249,12 @@ input:checked + .slider:before {
 input:checked + .slider {
   background-color: #FFA100;
 }
+.back-button{
+  background-color: #f43a3a;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}

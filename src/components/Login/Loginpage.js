@@ -46,7 +46,9 @@ const Loginpage = ({ onLogin }) => {
 
   return (
     <div className="page-container">
+      
       <div className="login-box">
+        <img src="/logo.png" alt="Logo" className="logo" />
         <h2 className="page-title">Login</h2>
         <div className="input-group">
           <label className="input-label">Username</label>

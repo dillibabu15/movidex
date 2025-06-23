@@ -57,6 +57,7 @@ function App() {
             path="/home"
             element={
               <MoviesGrid
+              user={user}
                 watchlist={watchlist}
                 movies={movies}
                 toggleWatchlist={toggleWatchlist}
