@@ -5,6 +5,8 @@ import Footer from "./components/Footer";
 import MoviesGrid from "./components/Moviefile/MoviesGrid";
 import Watchlist from "./components/Moviefile/Watchlist";
 import Loginpage from "./components/Login/Loginpage";
+import RegisterPage from "./components/Register/RegisterPage";
+
 import './App.css';
 import './styles.css';
 
@@ -32,9 +34,9 @@ function App() {
     if (token && savedUser) {
       setUser(JSON.parse(savedUser));
     }
-    fetch("movies.json")
-      .then((response) => response.json())
-      .then((data) => setMovies(data));
+    fetch("http://localhost:5000/api/movies")
+    .then((response) => response.json())
+    .then((data) => setMovies(data));
   }, []);
 
   const toggleWatchlist = (movieId) => {
@@ -54,10 +56,14 @@ function App() {
             element={<Loginpage onLogin={setUser} />}
           />
           <Route
+            path="/register"
+            element={<RegisterPage />}
+          />
+          <Route
             path="/home"
             element={
               <MoviesGrid
-              user={user}
+                user={user}
                 watchlist={watchlist}
                 movies={movies}
                 toggleWatchlist={toggleWatchlist}
