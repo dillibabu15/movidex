@@ -30,8 +30,8 @@ const Loginpage = ({ onLogin }) => {
       const data = await res.json();
       if (res.ok) {
         const user = data.user;
-        const token = `${user.username}-${Date.now()}`;
-        sessionStorage.setItem('sessionToken', token);
+        const token = data.token; // <-- Use JWT token from backend
+        sessionStorage.setItem('sessionToken', token); // Store JWT token
         sessionStorage.setItem('user', JSON.stringify(user));
         Cookies.set('username', user.username, { expires: 7, path: '/' });
         Cookies.set('isLoggedIn', 'true', { expires: 7, path: '/' });

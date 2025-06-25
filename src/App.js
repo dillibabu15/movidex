@@ -34,9 +34,16 @@ function App() {
     if (token && savedUser) {
       setUser(JSON.parse(savedUser));
     }
-    fetch("http://localhost:5000/api/movies")
-    .then((response) => response.json())
-    .then((data) => setMovies(data));
+    if (token) {
+      fetch("http://localhost:5000/api/movies", {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        }
+      })
+      .then((response) => response.json())
+      .then((data) => setMovies(Array.isArray(data) ? data : []));
+    }
   }, []);
 
   const toggleWatchlist = (movieId) => {

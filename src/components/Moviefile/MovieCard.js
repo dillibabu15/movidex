@@ -15,7 +15,7 @@ export default function MovieCard({ movie, isWatchlisted, toggleWatchlist }) {
   };
 
   return (
-    <div key={movie.id} className="movie-card">
+    <div key={movie._id} className="movie-card">
       <img
         src={`images/${movie.image}`}
         alt={movie.title}
@@ -33,7 +33,7 @@ export default function MovieCard({ movie, isWatchlisted, toggleWatchlist }) {
           <input
             type="checkbox"
             checked={isWatchlisted}
-            onChange={() => toggleWatchlist(movie.id)}
+            onChange={() => toggleWatchlist(movie._id)}
           ></input>
 
           <span className="slider">
