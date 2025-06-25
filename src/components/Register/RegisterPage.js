@@ -46,6 +46,7 @@ const RegisterPage = () => {
   return (
     <div className="page-container">
       <div className="login-box">
+         <img src="/logo.png" alt="Logo" className="logo" />
         <h2 className="page-title">Register</h2>
         <form onSubmit={handleRegister}>
           <div className="input-group">
@@ -79,6 +80,9 @@ const RegisterPage = () => {
               setErrors({});
               setSuccessMsg('');
             }}>Reset</button>
+             <button className="btn back-button" onClick={() => window.history.back()}>
+          Back
+        </button>
           </div>
         </form>
       </div>

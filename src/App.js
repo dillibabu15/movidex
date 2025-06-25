@@ -12,7 +12,7 @@ import './styles.css';
 
 function Layout({ children }) {
   const location = useLocation();
-  const hideHeaderFooter = location.pathname === '/';
+  const hideHeaderFooter = location.pathname === '/' || location.pathname === '/register';
 
   return (
     <>
