@@ -7,7 +7,7 @@ import MoviesGrid from "./components/Moviefile/MoviesGrid";
 import Watchlist from "./components/Moviefile/Watchlist";
 import Loginpage from "./components/Login/Loginpage";
 import RegisterPage from "./components/Register/RegisterPage";
-
+import MovieDetail from "./components/Moviefile/MovieDetail";
 import './App.css';
 import './styles.css';
 
@@ -185,6 +185,8 @@ function App() {
             />
           }
         />
+        <Route path="/movie/:id" element={<MovieDetail />} />
+
       </Routes>
     </Layout>
   );
