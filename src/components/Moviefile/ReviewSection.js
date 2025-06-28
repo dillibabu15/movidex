@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import "../../styles.css";
 export default function ReviewSection({ movieId, reviews = [], onReviewAdded }) {
   const [text, setText] = useState("");
   const [rating, setRating] = useState(5);
@@ -35,7 +35,7 @@ export default function ReviewSection({ movieId, reviews = [], onReviewAdded }) 
     <div className="review-section">
       <h3>Reviews</h3>
       {(!reviews || reviews.length === 0) && <p>No reviews yet.</p>}
-      <ul>
+      <ul className="review-list">
         {reviews && reviews.map((r, i) => (
           <li key={i}>
             <strong>{r.user?.username || "User"}:</strong> {r.text} <em>({new Date(r.date).toLocaleString()})</em>
@@ -50,17 +50,19 @@ export default function ReviewSection({ movieId, reviews = [], onReviewAdded }) 
           required
         />
         <br />
-        <label>
+        <label className="rating-label">
           Rating:
           <input
             type="number"
             min="1"
             max="5"
             value={rating}
+            className="rating-input"
             onChange={e => setRating(Number(e.target.value))}
             required
           />
         </label>
+       
         <button type="submit" disabled={submitting}>Submit Review</button>
       </form>
       {message && <p>{message}</p>}
