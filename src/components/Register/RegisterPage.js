@@ -46,7 +46,7 @@ const RegisterPage = () => {
   return (
     <div className="page-container">
       <div className="login-box">
-         <img src="/logo.png" alt="Logo" className="logo" />
+         <img src="/logo.png" alt="Logo" className="duck-logo" />
         <h2 className="page-title">Register</h2>
         <form onSubmit={handleRegister}>
           <div className="input-group">

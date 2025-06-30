@@ -1,6 +1,10 @@
 /* Cleaned Login & Welcome Page CSS */
-
+*{
+    margin: 0 ;
+    padding: 0;
+}
 .page-container {
+    max-width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,15 +13,7 @@
     font-family: Arial, sans-serif;
 }
 
-.login-box,
-.welcome-box {
-    background-color: rgb(252, 36, 36);
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    min-width: 300px;
-    text-align: center;
-}
+
 
 .page-title {
     margin-bottom: 30px;

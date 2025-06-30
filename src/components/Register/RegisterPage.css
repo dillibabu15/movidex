@@ -1,17 +1,22 @@
-/* Cleaned Login & Welcome Page CSS */
-
+*{
+    margin: 0 ;
+    padding: 0;
+}
 .page-container {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #131111;
+    background-color: #141414;
     font-family: Arial, sans-serif;
+    
 }
+
 
 .login-box,
 .welcome-box {
-    background-color: rgb(252, 36, 36);
+    background: linear-gradient(to right, #667eea, #a068d8);
+    
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -146,4 +151,8 @@
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+}
+.duck-logo {
+    width: 300px;
+    margin-bottom: 15px;
 }
