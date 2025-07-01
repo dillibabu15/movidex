@@ -1,6 +1,6 @@
 import React from 'react';
 import Cookies from 'js-cookie';
-import './Loginpage.css';
+
 
 const Welcome = ({ user, onNavigate }) => {
   const username = Cookies.get('username');

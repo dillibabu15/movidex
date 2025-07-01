@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Cookies from 'js-cookie';
-import './Loginpage.css';
+
 import { useNavigate } from 'react-router-dom';
 
 const Loginpage = ({ onLogin }) => {
