@@ -93,6 +93,10 @@ body {
 .movie-card-title {
   font-size: 1.1rem;
   font-weight: bold;
+  color: #fff;
+  &:hover {
+    color: #ffa100;
+  }
 }
 
 .movie-card-rating {
@@ -248,4 +252,173 @@ input:checked + .slider:before {
 
 input:checked + .slider {
   background-color: #FFA100;
+}
+.back-button{
+  background-color: #f43a3a;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.movie-detail {
+  margin: 40px auto 60px auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.10), 0 1.5px 6px rgba(0,0,0,0.08);
+  padding: 32px 28px 28px 28px;
+  position: relative;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  animation: fadeIn 0.7s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px);}
+  to   { opacity: 1; transform: translateY(0);}
+}
+
+.movie-detail img {
+  display: block;
+  margin: 24px auto 18px auto;
+  max-width: 260px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+}
+
+.movie-detail h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 0.3em;
+  color: #222;
+  letter-spacing: 1px;
+}
+
+.movie-detail .back-button {
+  position: absolute;
+  left: 24px;
+  top: 24px;
+  background: #f5f5f5;
+  border: none;
+  color: #444;
+  font-size: 1rem;
+  padding: 7px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+}
+.movie-detail .back-button:hover {
+  background: #e0e0e0;
+}
+
+.movie-detail .average-rating {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: #f39c12;
+  font-weight: 500;
+}
+
+.movie-detail p {
+  font-size: 1.08rem;
+  color: #444;
+  margin: 0 0 18px 0;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.review-section {
+  margin-top: 32px;
+  border-top: 1px solid #eee;
+  padding-top: 18px;
+}
+
+.review-section h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.review-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px 0;
+}
+
+.review-section li {
+  background: #f8f8f8;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 10px 14px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.review-section form textarea {
+  width: 100%;
+  min-height: 60px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 8px;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  resize: vertical;
+}
+
+.review-section form label {
+  font-size: 1rem;
+  margin-right: 10px;
+}
+
+.review-section form input[type="number"] {
+  width: 60px;
+  padding: 4px;
+  border-radius: 6px;
+  border: 1px solid #bbb;
+  margin-left: 6px;
+  font-size: 1rem;
+}
+
+.review-section button[type="submit"] {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 18px;
+  padding: 7px 22px;
+  font-size: 1rem;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.review-section button[type="submit"]:hover {
+  background: #0056b3;
+}
+
+.review-section p {
+  margin-top: 10px;
+  color: #27ae60;
+  font-weight: 500;
+  text-align: center;
+}
+
+.review-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px 0;
+
+  display: flex;
+  flex-direction: column;
+}
+.rating-label {
+ border: none;
+  background: #ff0000;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bolder;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
