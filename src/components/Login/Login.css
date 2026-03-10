@@ -1,0 +1,334 @@
+/* ═══════════════════════════════════════
+   Moviedux — Cinematic Login Page
+   ═══════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+/* ── Global Reset ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ── Page Container ── */
+.page-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: 'DM Sans', sans-serif;
+  z-index: 9999;
+}
+
+/* ── Layer 1 — Video Background ── */
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ── Layer 2 — Overlay ── */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.15) 40%,
+      rgba(0, 0, 0, 0.15) 60%,
+      rgba(0, 0, 0, 0.55) 100%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(30, 10, 80, 0.3) 0%,
+      transparent 60%
+    );
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ── Layer 3 — Login Card (Glassmorphism) ── */
+.login-box {
+  position: relative;
+  z-index: 3;
+  background: rgba(8, 6, 20, 0.72);
+  backdrop-filter: blur(30px) saturate(170%) brightness(1.1);
+  -webkit-backdrop-filter: blur(30px) saturate(170%) brightness(1.1);
+  border-radius: 24px;
+  padding: 42px 38px 46px;
+  max-width: 400px;
+  width: 90%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 0 0 1px rgba(108, 79, 232, 0.18),
+    0 36px 90px rgba(0, 0, 0, 0.75),
+    0 10px 30px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.09);
+  overflow: hidden;
+  animation: cardIn 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Purple corner glow */
+.login-box::before {
+  content: '';
+  position: absolute;
+  top: -70px;
+  left: -70px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(108, 79, 232, 0.32), transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Gold corner glow */
+.login-box::after {
+  content: '';
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 197, 24, 0.14), transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Ensure all children sit above pseudo-elements */
+.login-box > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Card Entrance Animation ── */
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ── Logo ── */
+.duck-logo {
+  display: block;
+  width: 130px;
+  margin: 0 auto 10px;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+}
+
+/* ── Title ── */
+.page-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px;
+  letter-spacing: 3px;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 30px;
+  text-shadow: 0 2px 10px rgba(108, 79, 232, 0.35);
+}
+
+/* ── Input Group ── */
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.text-input {
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  color: #ffffff;
+  transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.text-input::placeholder {
+  color: rgba(255, 255, 255, 0.28);
+}
+
+.text-input:focus {
+  border-color: rgba(108, 79, 232, 0.7);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 0 3px rgba(108, 79, 232, 0.18);
+}
+
+/* ── Messages ── */
+.message-box {
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.message-error {
+  color: #ff6b6b;
+  text-shadow: 0 0 8px rgba(255, 107, 107, 0.25);
+}
+
+.message-success {
+  color: #69db7c;
+}
+
+/* ── Button Group ── */
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.btn {
+  flex: 1;
+  padding: 13px 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.25s;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* Login button */
+.btn-submit {
+  background: linear-gradient(135deg, #6c4fe8, #8b6cf7);
+  color: #ffffff;
+  box-shadow: 0 4px 18px rgba(108, 79, 232, 0.45);
+}
+
+.btn-submit:hover {
+  background: linear-gradient(135deg, #7d62f0, #9b80ff);
+  box-shadow: 0 6px 24px rgba(108, 79, 232, 0.6);
+}
+
+/* Reset button */
+.btn-reset {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.btn-reset:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+}
+
+/* Register button */
+.btn-reg {
+  background: linear-gradient(135deg, #f5c518, #e8b400);
+  color: #1a1a2e;
+  box-shadow: 0 4px 14px rgba(245, 197, 24, 0.3);
+}
+
+.btn-reg:hover {
+  background: linear-gradient(135deg, #ffd43b, #f5c518);
+  box-shadow: 0 6px 20px rgba(245, 197, 24, 0.45);
+}
+
+/* ── Welcome Page ── */
+.welcome-title {
+  color: #69db7c;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.welcome-text {
+  margin-bottom: 20px;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 16px;
+}
+
+.text-login {
+  color: #8b6cf7;
+  text-decoration: none;
+}
+
+.text-login:hover {
+  text-decoration: underline;
+}
+
+/* Logout button */
+.btn-logout {
+  background-color: #dc3545;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: 'DM Sans', sans-serif;
+  transition: background 0.25s;
+}
+
+.btn-logout:hover {
+  background-color: #c82333;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .login-box {
+    padding: 32px 22px 36px;
+    border-radius: 18px;
+  }
+
+  .page-title {
+    font-size: 26px;
+  }
+
+  .text-input {
+    font-size: 14px;
+    padding: 12px 14px;
+  }
+
+  .btn {
+    font-size: 13px;
+    padding: 11px 8px;
+  }
+
+  .duck-logo {
+    width: 100px;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+}
