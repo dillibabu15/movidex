@@ -80,7 +80,7 @@ const RegisterPage = () => {
               setErrors({});
               setSuccessMsg('');
             }}>Reset</button>
-             <button className="btn back-button" onClick={() => window.history.back()}>
+             <button className="btn back-button" onClick={() => navigate('/')}>
           Back
         </button>
           </div>

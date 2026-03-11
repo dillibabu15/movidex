@@ -10,23 +10,28 @@ export default function ReviewSection({ movieId, reviews = [], onReviewAdded }) 
     e.preventDefault();
     setSubmitting(true);
     setMessage("");
-    const token = sessionStorage.getItem('sessionToken');
-    const res = await fetch(`http://localhost:5000/api/movies/${movieId}/review`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`
-      },
-      body: JSON.stringify({ text, rating })
-    });
-    const data = await res.json();
-    if (res.ok) {
-      setMessage("Review submitted!");
-      setText("");
-      setRating(5);
-      if (onReviewAdded) onReviewAdded();
-    } else {
-      setMessage(data.message || "Error submitting review.");
+    try {
+      const token = sessionStorage.getItem('sessionToken');
+      const res = await fetch(`http://localhost:5000/api/movies/${movieId}/review`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`
+        },
+        body: JSON.stringify({ text, rating })
+      });
+      const data = await res.json();
+      if (res.ok) {
+        setMessage("Review submitted!");
+        setText("");
+        setRating(5);
+        if (onReviewAdded) onReviewAdded();
+      } else {
+        setMessage(data.message || "Error submitting review.");
+      }
+    } catch (err) {
+      console.error('Error submitting review:', err);
+      setMessage("Network error. Please try again.");
     }
     setSubmitting(false);
   };

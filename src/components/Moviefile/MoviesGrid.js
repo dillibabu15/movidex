@@ -39,10 +39,9 @@ export default function MoviesGrid({ movies, watchlist, toggleWatchlist }) {
   };
 
   const matchesGenre = (movie, genre) => {
-    return (
-      genre === "All Genres" ||
-      movie.genre.toLowerCase() === genre.toLowerCase()
-    );
+    if (genre === "All Genres") return true;
+    const movieGenres = movie.genre.split(',').map(g => g.trim().toLowerCase());
+    return movieGenres.includes(genre.toLowerCase());
   };
 
   const matchesSearchTerm = (movie, searchTerm) => {
@@ -96,9 +95,19 @@ export default function MoviesGrid({ movies, watchlist, toggleWatchlist }) {
           >
             <option>All Genres</option>
             <option>Action</option>
+            <option>Adventure</option>
+            <option>Animation</option>
+            <option>Comedy</option>
+            <option>Crime</option>
+            <option>Documentary</option>
             <option>Drama</option>
             <option>Fantasy</option>
+            <option>History</option>
             <option>Horror</option>
+            <option>Music</option>
+            <option>Romance</option>
+            <option>Science Fiction</option>
+            <option>Thriller</option>
           </select>
         </div>
 

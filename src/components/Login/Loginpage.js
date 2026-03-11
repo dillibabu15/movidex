@@ -33,8 +33,8 @@ const Loginpage = ({ onLogin }) => {
         const token = data.token;
         sessionStorage.setItem('sessionToken', token);
         sessionStorage.setItem('user', JSON.stringify(user));
-        Cookies.set('username', user.username, { expires: 7, path: '/' });
-        Cookies.set('isLoggedIn', 'true', { expires: 7, path: '/' });
+        Cookies.set('username', user.username, { expires: 7, path: '/', secure: true, sameSite: 'Strict' });
+        Cookies.set('isLoggedIn', 'true', { expires: 7, path: '/', secure: true, sameSite: 'Strict' });
 
         if (onLogin) onLogin(user);
         navigate('/home');

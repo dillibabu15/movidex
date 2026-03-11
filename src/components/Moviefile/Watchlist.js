@@ -1,12 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../../styles.css";
 import MovieCard from "./MovieCard";
 
 export default function Watchlist({ movies, watchlist, toggleWatchlist }) {
+  const navigate = useNavigate();
   return (
     <div>
       <div className="watchlist-header">
-        <button className="back-button" onClick={() => window.history.back()}>
+        <button className="back-button" onClick={() => navigate('/home')}>
           Back
         </button>
         <h1 className="title">Your Watchlist</h1>
