@@ -11,12 +11,18 @@ export default function MovieDetail() {
 
   const fetchMovie = async () => {
     setLoading(true);
-    const token = sessionStorage.getItem('sessionToken');
-    const res = await fetch(`http://localhost:5000/api/movies/${id}`, {
-      headers: token ? { 'Authorization': `Bearer ${token}` } : {}
-    });
-    const data = await res.json();
-    setMovie(data);
+    try {
+      const token = sessionStorage.getItem('sessionToken');
+      const res = await fetch(`http://localhost:5000/api/movies/${id}`, {
+        headers: token ? { 'Authorization': `Bearer ${token}` } : {}
+      });
+      if (!res.ok) throw new Error('Failed to fetch movie');
+      const data = await res.json();
+      setMovie(data);
+    } catch (err) {
+      console.error('Error fetching movie:', err);
+      setMovie(null);
+    }
     setLoading(false);
   };
 

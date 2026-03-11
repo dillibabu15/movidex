@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Cookies from 'js-cookie';
-
 import { useNavigate } from 'react-router-dom';
+import './Login.css';
 
 const Loginpage = ({ onLogin }) => {
   const [username, setUsername] = useState('');
@@ -30,11 +30,11 @@ const Loginpage = ({ onLogin }) => {
       const data = await res.json();
       if (res.ok) {
         const user = data.user;
-        const token = data.token; // <-- Use JWT token from backend
-        sessionStorage.setItem('sessionToken', token); // Store JWT token
+        const token = data.token;
+        sessionStorage.setItem('sessionToken', token);
         sessionStorage.setItem('user', JSON.stringify(user));
-        Cookies.set('username', user.username, { expires: 7, path: '/' });
-        Cookies.set('isLoggedIn', 'true', { expires: 7, path: '/' });
+        Cookies.set('username', user.username, { expires: 7, path: '/', secure: true, sameSite: 'Strict' });
+        Cookies.set('isLoggedIn', 'true', { expires: 7, path: '/', secure: true, sameSite: 'Strict' });
 
         if (onLogin) onLogin(user);
         navigate('/home');
@@ -48,6 +48,10 @@ const Loginpage = ({ onLogin }) => {
 
   return (
     <div className="page-container">
+      <video autoPlay loop muted playsInline className="video-background">
+        <source src="/videos/Cinematic_Background_Video_Generation_Request.mp4" type="video/mp4" />
+      </video>
+      <div className="video-overlay"></div>
       <div className="login-box">
         <img src="/logo.png" alt="Logo" className="duck-logo" />
         <h2 className="page-title">Login</h2>
@@ -56,6 +60,7 @@ const Loginpage = ({ onLogin }) => {
             <label className="input-label">Username</label>
             <input
               className="text-input"
+              placeholder="e.g. cinephile_42"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
@@ -66,6 +71,7 @@ const Loginpage = ({ onLogin }) => {
             <input
               type="password"
               className="text-input"
+              placeholder="••••••••"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -79,9 +85,9 @@ const Loginpage = ({ onLogin }) => {
               setPassword('');
               setErrors({});
             }}>Reset</button>
-            <button className="btn btn-reg" type="button" onClick={() => {
-              navigate('/register');
-            }}>Register</button>
+            <button className="btn btn-reg" type="button" onClick={() => navigate('/register')}>
+              Register
+            </button>
           </div>
         </form>
       </div>

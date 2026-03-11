@@ -186,6 +186,12 @@ function App() {
           }
         />
         <Route path="/movie/:id" element={<MovieDetail />} />
+        <Route path="*" element={
+          <div style={{textAlign:'center', marginTop:'80px', color:'#fff'}}>
+            <h2>404 — Page Not Found</h2>
+            <p>The page you're looking for doesn't exist.</p>
+          </div>
+        } />
 
       </Routes>
     </Layout>

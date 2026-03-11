@@ -5,7 +5,7 @@ import "../../styles.css";
 
 export default function MovieCard({ movie, isWatchlisted, toggleWatchlist }) {
   const handleError = (e) => {
-    e.target.src = "images/default.jpg";
+    e.target.src = "/images/default.jpg";
   };
 
   const getRatingClass = (rating) => {
@@ -20,7 +20,7 @@ export default function MovieCard({ movie, isWatchlisted, toggleWatchlist }) {
    <div key={movie._id} className="movie-card">
       <Link to={`/movie/${movie._id}`}>
         <img
-          src={`images/${movie.image}`}
+          src={`/images/${movie.image}`}
           alt={movie.title}
           onError={handleError}
         />
